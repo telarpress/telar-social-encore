@@ -10,12 +10,6 @@ import (
 // Cache state
 var app *fiber.App
 
-
-var secrets struct {
-    GitHubAPIKey string 
-}
-
-
 // init
 func init() {
 
