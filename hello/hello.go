@@ -25,7 +25,7 @@ func init() {
 
 	app.Get("/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
-        return c.SendString("Hello, World 👋 !"+name+ " "+ secrets.GitHubAPIKey)
+        return c.SendString("Hello, World with secrets 👋 !"+name+ " "+ secrets.GitHubAPIKey)
     })
 }
 
