@@ -30,7 +30,7 @@ func init() {
 	app = fiber.New()
 	app.Get("/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
-        return c.SendString("Hello, World with secrets 👋 !"+name+ " "+ secrets.GitHubAPIKey+" "+ *coreSetting.AppConfig.AppName)
+        return c.SendString("Hello, World with secrets 👋 !"+name+ " "+ secrets.GitHubAPIKey+" ["+ *coreSetting.AppConfig.AppName+"]")
     })
 }
 
