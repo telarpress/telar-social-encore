@@ -1,4 +1,4 @@
-package hello
+package auth
 
 import (
 	"net/http"
@@ -18,6 +18,9 @@ func RemoveBaseURLFromRequest(r *http.Request) {
 
 // RemoveBaseURL removes the base url from the request path
 func RemoveBaseURL(url string) string {
-    url = strings.TrimPrefix(url, "/")
+	if url == "/" {
+		return url
+	}
+	url = strings.TrimPrefix(url, "/")
 	return "/"+strings.Join(strings.Split(url, "/")[1:], "/")
 }
