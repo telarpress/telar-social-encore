@@ -2,7 +2,6 @@ package config
 
 import (
 	_ "embed"
-	"fmt"
 	"os"
 
 	coreSetting "github.com/red-gold/telar-core/config"
@@ -110,7 +109,6 @@ type StorageConfig struct {
 	
 // Initiailze core configurations
 func InitCoreConfig(cfg *coreSetting.Configuration) {
-	fmt.Println("[ "+os.Getenv("PORT")+" ]")
 	
 	// Parse app config
 	var appConfig AppConfig

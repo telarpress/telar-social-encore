@@ -13,5 +13,12 @@ require (
 	github.com/red-gold/telar-web/micros/profile v0.0.0-20210805101141-7759270c53b7
 	github.com/red-gold/telar-web/micros/setting v0.0.0-20210805101141-7759270c53b7
 	github.com/red-gold/telar-web/micros/storage v0.0.0-20210805101141-7759270c53b7
+	github.com/red-gold/ts-serverless/micros/circles v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/comments v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/gallery v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/posts v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/user-rels v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/vang v0.0.0-20210805101516-031679643fdc
+	github.com/red-gold/ts-serverless/micros/votes v0.0.0-20210805101516-031679643fdc
 	gopkg.in/yaml.v2 v2.4.0
 )
