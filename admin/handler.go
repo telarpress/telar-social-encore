@@ -1,4 +1,4 @@
-package auth
+package admin
 
 import (
 	"context"
@@ -12,9 +12,8 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/requestid"
 	coreSetting "github.com/red-gold/telar-core/config"
 	"github.com/red-gold/telar-core/pkg/log"
-	authSetting "github.com/red-gold/telar-web/micros/auth/config"
-	"github.com/red-gold/telar-web/micros/auth/database"
-	"github.com/red-gold/telar-web/micros/auth/router"
+	"github.com/red-gold/telar-web/micros/admin/database"
+	"github.com/red-gold/telar-web/micros/admin/router"
 	"github.com/telarpress/telar-social-encore/config"
 )
 
@@ -51,12 +50,6 @@ func init() {
 	coreSetting.AppConfig.MongoDBHost = &secrets.MongoHost
 	coreSetting.AppConfig.Database = &secrets.MongoDatabase
 
-	// Init auth micro config
-	config.InitAuthConfig(&authSetting.AuthConfig)
-	authSetting.AuthConfig.OAuthClientSecret = secrets.TSClientSecret
-	authSetting.AuthConfig.AdminUsername = secrets.AdminUsername
-	authSetting.AuthConfig.AdminPassword = secrets.AdminPassword
-
 	// Initialize app
 	app = fiber.New()
 
@@ -72,16 +65,12 @@ func init() {
 		AllowCredentials: true,
 		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Headers, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
 	}))
-	// app.Use(func (c *fiber.Ctx) error {
-	// 	c.Locals("app", "auth")
-	// 	return nil
-	// })
 	router.SetupRoutes(app)
 }
 
-// Auth handler
+// Admin handler
 //
-//encore:api public raw path=/auth/*p1
+//encore:api public raw path=/admin/*p1
 func Handle(w http.ResponseWriter, r *http.Request) {
 	// Remove base url from request path
 	RemoveBaseURLFromRequest(r)
