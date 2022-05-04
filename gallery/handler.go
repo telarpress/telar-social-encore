@@ -68,9 +68,9 @@ func init() {
 	router.SetupRoutes(app)
 }
 
-// Gallery handler
+// Media handler
 //
-//encore:api public raw path=/gallery/*p1
+//encore:api public raw path=/media/*p1
 func Handle(w http.ResponseWriter, r *http.Request) {
 	// Remove base url from request path
 	RemoveBaseURLFromRequest(r)
