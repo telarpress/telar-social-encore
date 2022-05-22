@@ -23,24 +23,24 @@ var app *fiber.App
 
 // Secrets
 var secrets struct {
-    AdminUsername string 
-    AdminPassword string 
-    MongoHost string 
-    MongoDatabase string 
-    PhoneAuthId string 
-    PhoneAuthToken string 
-    Key string 
-    KeyPub string 
-    RefEmailPass string 
-    PayloadSecret string 
-    ServiceAccount string 
-    TSClientSecret string 
-    RecaptchaKey string 
+	AdminUsername  string
+	AdminPassword  string
+	MongoHost      string
+	MongoDatabase  string
+	PhoneAuthId    string
+	PhoneAuthToken string
+	Key            string
+	KeyPub         string
+	RefEmailPass   string
+	PayloadSecret  string
+	ServiceAccount string
+	TSClientSecret string
+	RecaptchaKey   string
 }
 
 // init
 func init() {
-	
+
 	// Init core config
 	config.InitCoreConfig(&coreSetting.AppConfig)
 	coreSetting.AppConfig.PayloadSecret = &secrets.PayloadSecret
