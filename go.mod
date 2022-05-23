@@ -10,6 +10,7 @@ require (
 	github.com/go-stack/stack v1.8.1 // indirect
 	github.com/gofiber/adaptor/v2 v2.1.23
 	github.com/gofiber/fiber/v2 v2.33.0
+	github.com/gofiber/template v1.6.10
 	github.com/gofrs/uuid v4.2.0+incompatible // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/snappy v0.0.4 // indirect

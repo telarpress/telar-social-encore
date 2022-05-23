@@ -2,6 +2,8 @@ package auth
 
 import (
 	"context"
+	"embed"
+	"io/fs"
 	"net/http"
 
 	"github.com/gofiber/adaptor/v2"
@@ -10,6 +12,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
+	"github.com/gofiber/template/html"
 	coreSetting "github.com/red-gold/telar-core/config"
 	"github.com/red-gold/telar-core/pkg/log"
 	authSetting "github.com/red-gold/telar-web/micros/auth/config"
@@ -20,6 +23,9 @@ import (
 
 // Cache state
 var app *fiber.App
+
+//go:embed all:views
+var viewsFS embed.FS
 
 // Secrets
 var secrets struct {
@@ -58,7 +64,15 @@ func init() {
 	authSetting.AuthConfig.AdminPassword = secrets.AdminPassword
 
 	// Initialize app
-	app = fiber.New()
+	dirFS, err := fs.Sub(viewsFS, "views")
+	if err != nil {
+		log.Error(err.Error())
+	}
+
+	engine := html.NewFileSystem(http.FS(dirFS), ".html")
+	app = fiber.New(fiber.Config{
+		Views: engine,
+	})
 
 	app.Use(recover.New())
 	app.Use(requestid.New())
