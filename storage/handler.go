@@ -23,24 +23,24 @@ var app *fiber.App
 
 // Secrets
 var secrets struct {
-    AdminUsername string 
-    AdminPassword string 
-    MongoHost string 
-    MongoDatabase string 
-    PhoneAuthId string 
-    PhoneAuthToken string 
-    Key string 
-    KeyPub string 
-    RefEmailPass string 
-    PayloadSecret string 
-    ServiceAccount string 
-    TSClientSecret string 
-    RecaptchaKey string 
+	AdminUsername  string
+	AdminPassword  string
+	MongoHost      string
+	MongoDatabase  string
+	PhoneAuthId    string
+	PhoneAuthToken string
+	Key            string
+	KeyPub         string
+	RefEmailPass   string
+	PayloadSecret  string
+	ServiceAccount string
+	TSClientSecret string
+	RecaptchaKey   string
 }
 
 // init
 func init() {
-	
+
 	// Init core config
 	config.InitCoreConfig(&coreSetting.AppConfig)
 	coreSetting.AppConfig.PayloadSecret = &secrets.PayloadSecret
@@ -51,7 +51,7 @@ func init() {
 	coreSetting.AppConfig.MongoDBHost = &secrets.MongoHost
 	coreSetting.AppConfig.Database = &secrets.MongoDatabase
 
-	// Init storage mirco 
+	// Init storage mirco
 	config.InitStorageConfig(&storageSetting.StorageConfig)
 
 	// Initialize app
@@ -67,7 +67,7 @@ func init() {
 	app.Use(cors.New(cors.Config{
 		AllowOrigins:     *coreSetting.AppConfig.Origin,
 		AllowCredentials: true,
-		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Headers, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
+		AllowHeaders:     "Origin, Content-Type, Accept, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
 	}))
 	router.SetupRoutes(app)
 }

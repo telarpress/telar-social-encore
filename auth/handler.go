@@ -84,7 +84,7 @@ func init() {
 	app.Use(cors.New(cors.Config{
 		AllowOrigins:     *coreSetting.AppConfig.Origin,
 		AllowCredentials: true,
-		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Headers, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
+		AllowHeaders:     "Origin, Content-Type, Accept, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
 	}))
 	// app.Use(func (c *fiber.Ctx) error {
 	// 	c.Locals("app", "auth")
