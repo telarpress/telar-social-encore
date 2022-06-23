@@ -6,7 +6,6 @@ import (
 
 	"github.com/gofiber/adaptor/v2"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
@@ -62,11 +61,11 @@ func init() {
 	))
 
 	log.Info("Allso Origins: %s", *coreSetting.AppConfig.Origin)
-	app.Use(cors.New(cors.Config{
-		// AllowOrigins:     *coreSetting.AppConfig.Origin,
-		AllowCredentials: true,
-		AllowHeaders:     "Origin, Content-Type, Accept, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
-	}))
+	// app.Use(cors.New(cors.Config{
+	// 	AllowOrigins:     *coreSetting.AppConfig.Origin,
+	// 	AllowCredentials: true,
+	// 	AllowHeaders:     "Origin, Content-Type, Accept, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
+	// }))
 	router.SetupRoutes(app)
 }
 
