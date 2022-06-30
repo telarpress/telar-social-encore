@@ -52,6 +52,7 @@ func init() {
 
 	// Init storage mirco
 	config.InitStorageConfig(&storageSetting.StorageConfig)
+	storageSetting.StorageConfig.StorageSecret = secrets.ServiceAccount
 
 	// Initialize app
 	app = fiber.New()
