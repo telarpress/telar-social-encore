@@ -17,10 +17,10 @@ require (
 	github.com/klauspost/compress v1.15.7 // indirect
 	github.com/plivo/plivo-go v7.2.0+incompatible // indirect
 	github.com/red-gold/telar-core v0.1.16
-	github.com/red-gold/telar-web v0.1.79 // indirect
+	github.com/red-gold/telar-web v0.1.81 // indirect
 	github.com/red-gold/telar-web/micros/actions v0.0.0-20220517073502-5a610096e212
 	github.com/red-gold/telar-web/micros/admin v0.0.0-20220517073502-5a610096e212
-	github.com/red-gold/telar-web/micros/auth v0.0.0-20220628124906-b7356e52864d
+	github.com/red-gold/telar-web/micros/auth v0.0.0-20220706085401-f266cbddfb06
 	github.com/red-gold/telar-web/micros/notifications v0.0.0-20220517073502-5a610096e212
 	github.com/red-gold/telar-web/micros/profile v0.0.0-20220517073502-5a610096e212
 	github.com/red-gold/telar-web/micros/setting v0.0.0-20220517073502-5a610096e212
@@ -34,13 +34,12 @@ require (
 	github.com/red-gold/ts-serverless/micros/vang v0.0.0-20210805101516-031679643fdc
 	github.com/red-gold/ts-serverless/micros/votes v0.0.0-20210805101516-031679643fdc
 	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/swaggo/files v0.0.0-20220610200504-28940afbdbfe // indirect
 	github.com/valyala/fasthttp v1.38.0 // indirect
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	go.mongodb.org/mongo-driver v1.9.1 // indirect
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d // indirect
-	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e // indirect
-	golang.org/x/oauth2 v0.0.0-20220628200809-02e64fa58f26 // indirect
-	golang.org/x/sys v0.0.0-20220627191245-f75cf1eec38b // indirect
+	golang.org/x/oauth2 v0.0.0-20220630143837-2104d58473e0 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
