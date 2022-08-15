@@ -1,5 +1,3 @@
-# telar-social-encore
-
 
 <p align="center">
   <a href="https://telar.dec/" rel="noopener" target="_blank"><img width="150" src="https://raw.githubusercontent.com/red-gold/red-gold-web/master/website/static/img/logos/telar-social-logo/profile.png" alt="Material-UI logo"></a></p>
