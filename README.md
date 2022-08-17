@@ -6,7 +6,7 @@
 <h1 align="center">Telar Social Adapter for Encore</h1>
 
 <div align="center">
- Telar Social Network is an open source social network written in Go. A modern cloud native social network. Telar makes it simple to run your own social network running on any public or private cloud. 
+ Telar Social Engine is a scalable cloud native social network. Whatever your creative idea or unique bussiness model, you can build it by Telar running on any public or private cloud.
   This repository supporting <a href="https://encore.dev">Encore platform</a>. Encore is the backend development engine built on the belief that escaping complexity unleashes a higher state of creativity.
 </div>
 
