@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 
+	_ "cloud.google.com/go/pubsub"
 	"github.com/gofiber/adaptor/v2"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"

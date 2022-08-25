@@ -5,6 +5,7 @@ go 1.16
 require (
 	cloud.google.com/go v0.104.0 // indirect
 	cloud.google.com/go/compute v1.9.0 // indirect
+	cloud.google.com/go/pubsub v1.25.1 // indirect
 	cloud.google.com/go/storage v1.25.0 // indirect
 	github.com/alexellis/hmac v1.3.0 // indirect
 	github.com/go-openapi/spec v0.20.7 // indirect
