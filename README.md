@@ -10,8 +10,8 @@
   This repository is an adaptor to run Telar Social on <a href="https://encore.dev">Encore platform</a>. Encore is the backend development engine built on the belief that escaping complexity unleashes a higher state of creativity.
 </div>
 
-> 🚧 ***IT IS UNDER ACTIVE DEVELOPMENT, current version is unstable and maybe change at any time until release of v1.0.0.***
-<br>***DO NOT USE IN ANY PRODUCTION ENVIRONMENT!!!*** ⚠️
+ 🚧 ***IT IS UNDER ACTIVE DEVELOPMENT, current version is unstable and maybe change at any time until release of v1.0.0.***
+<br>***DO NOT USE IN ANY PRODUCTION ENVIRONMENT!!!***
 
 ## Demo
 [Telar Social](https://social.telar.dev)
