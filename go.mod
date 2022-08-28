@@ -25,11 +25,11 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/montanaflynn/stats v0.6.6 // indirect
 	github.com/plivo/plivo-go v7.2.0+incompatible // indirect
-	github.com/red-gold/telar-core v0.1.17
+	github.com/red-gold/telar-core v0.1.18
 	github.com/red-gold/telar-web v0.2.5 // indirect
 	github.com/red-gold/telar-web/micros/actions v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/admin v0.0.0-20220825092108-043295a29855
-	github.com/red-gold/telar-web/micros/auth v0.0.0-20220828030030-f29ffe9285ba
+	github.com/red-gold/telar-web/micros/auth v0.0.0-20220828033515-6111487b2af9
 	github.com/red-gold/telar-web/micros/notifications v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/profile v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/setting v0.0.0-20220825092108-043295a29855
