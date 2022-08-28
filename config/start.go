@@ -204,3 +204,11 @@ func baseURL() string {
 	}
 	return "http://localhost:" + p
 }
+
+func getEnvironment() string {
+	p := os.Getenv("PORT")
+	if p == "" {
+		return "development"
+	}
+	return "production"
+}

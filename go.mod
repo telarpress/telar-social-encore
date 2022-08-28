@@ -25,11 +25,11 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/montanaflynn/stats v0.6.6 // indirect
 	github.com/plivo/plivo-go v7.2.0+incompatible // indirect
-	github.com/red-gold/telar-core v0.1.16
-	github.com/red-gold/telar-web v0.2.2 // indirect
+	github.com/red-gold/telar-core v0.1.17
+	github.com/red-gold/telar-web v0.2.5 // indirect
 	github.com/red-gold/telar-web/micros/actions v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/admin v0.0.0-20220825092108-043295a29855
-	github.com/red-gold/telar-web/micros/auth v0.0.0-20220825092108-043295a29855
+	github.com/red-gold/telar-web/micros/auth v0.0.0-20220828030030-f29ffe9285ba
 	github.com/red-gold/telar-web/micros/notifications v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/profile v0.0.0-20220825092108-043295a29855
 	github.com/red-gold/telar-web/micros/setting v0.0.0-20220825092108-043295a29855
@@ -44,15 +44,16 @@ require (
 	github.com/red-gold/ts-serverless/micros/votes v0.0.0-20210805101516-031679643fdc
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a // indirect
+	github.com/swaggo/swag v1.8.5 // indirect
 	github.com/valyala/fasthttp v1.39.0 // indirect
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	go.mongodb.org/mongo-driver v1.10.1 // indirect
-	golang.org/x/crypto v0.0.0-20220824171710-5757bc0c5503 // indirect
-	golang.org/x/net v0.0.0-20220822230855-b0a4917ee28c // indirect
+	golang.org/x/crypto v0.0.0-20220826181053-bd7e27e6170d // indirect
+	golang.org/x/net v0.0.0-20220826154423-83b083e8dc8b // indirect
 	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094 // indirect
 	golang.org/x/sync v0.0.0-20220819030929-7fc1605a5dde // indirect
-	golang.org/x/sys v0.0.0-20220823224334-20c2bfdbfe24 // indirect
+	golang.org/x/sys v0.0.0-20220825204002-c680a09ffe64 // indirect
 	golang.org/x/tools v0.1.12 // indirect
 	google.golang.org/api v0.94.0 // indirect
 	google.golang.org/grpc v1.49.0 // indirect
