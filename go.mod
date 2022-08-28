@@ -25,15 +25,15 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/montanaflynn/stats v0.6.6 // indirect
 	github.com/plivo/plivo-go v7.2.0+incompatible // indirect
-	github.com/red-gold/telar-core v0.1.18
-	github.com/red-gold/telar-web v0.2.7 // indirect
-	github.com/red-gold/telar-web/micros/actions v0.0.0-20220825092108-043295a29855
-	github.com/red-gold/telar-web/micros/admin v0.0.0-20220825092108-043295a29855
+	github.com/red-gold/telar-core v0.1.19
+	github.com/red-gold/telar-web v0.2.9 // indirect
+	github.com/red-gold/telar-web/micros/actions v0.0.0-20220828072406-b754338a883c
+	github.com/red-gold/telar-web/micros/admin v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/telar-web/micros/auth v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/telar-web/micros/notifications v0.0.0-20220828072406-b754338a883c
-	github.com/red-gold/telar-web/micros/profile v0.0.0-20220825092108-043295a29855
-	github.com/red-gold/telar-web/micros/setting v0.0.0-20220825092108-043295a29855
-	github.com/red-gold/telar-web/micros/storage v0.0.0-20220825092108-043295a29855
+	github.com/red-gold/telar-web/micros/profile v0.0.0-20220828072406-b754338a883c
+	github.com/red-gold/telar-web/micros/setting v0.0.0-20220828072406-b754338a883c
+	github.com/red-gold/telar-web/micros/storage v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/ts-serverless v0.1.34 // indirect
 	github.com/red-gold/ts-serverless/micros/circles v0.0.0-20210805101516-031679643fdc
 	github.com/red-gold/ts-serverless/micros/comments v0.0.0-20210805101516-031679643fdc
