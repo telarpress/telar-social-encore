@@ -1,3 +1,0 @@
-environment:
-  base_route: "/user-rels"
-  write_debug: "true"

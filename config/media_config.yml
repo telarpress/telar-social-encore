@@ -1,3 +1,0 @@
-environment:
-  base_route: "/gallery"
-  write_debug: "true"

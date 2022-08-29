@@ -88,6 +88,8 @@ github.com/CloudyKit/jet/v6 v6.1.0/go.mod h1:d3ypHeIRNo2+XyqnGA8s+aphtcVpjP5hPwP
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DataDog/zstd v1.4.8/go.mod h1:g4AWEaM3yOg3HYfnJ3YIawPnVdXJh9QME85blwSAmyw=
 github.com/Djarvur/go-err113 v0.0.0-20200511133814-5174e21577d5/go.mod h1:4UJr5HIiMZrwgkSPdsjy2uOQExX/WEILpIrO9UPGuXs=
+github.com/Jeffail/gabs/v2 v2.6.1 h1:wwbE6nTQTwIMsMxzi6XFQQYRZ6wDc1mSdxoAN+9U4Gk=
+github.com/Jeffail/gabs/v2 v2.6.1/go.mod h1:xCn81vdHKxFUuWWAaD5jCTQDNPBMh5pPs9IJ+NcziBI=
 github.com/Joker/hpp v0.0.0-20180418125244-6893e659854a/go.mod h1:MzD2WMdSxvbHw5fM/OXOFily/lipJWRc9C1px0Mt0ZE=
 github.com/Joker/hpp v1.0.0/go.mod h1:8x5n+M1Hp5hC0g8okX3sR3vFQwynaX/UgSOM9MeBKzY=
 github.com/Joker/jade v1.0.0/go.mod h1:efZIdO0py/LtcJRSa/j2WEklMSAw84WV0zZVMxNToB8=
@@ -689,6 +691,8 @@ github.com/red-gold/telar-web v0.2.7 h1:nGhiamhyyzIxFXVvcNBS3ViZo+u4Bj1vvF9ZQZ7M
 github.com/red-gold/telar-web v0.2.7/go.mod h1:58zCC/2Ng0Nv31WNsLPdRPXTYBXfSTfyTQZPkHTrfvg=
 github.com/red-gold/telar-web v0.2.9 h1:4W553SoD0cmVi1F1PmOIA2ZywPNjZqXQziiU5wci3+s=
 github.com/red-gold/telar-web v0.2.9/go.mod h1:nP7ZC0BMhtSfRqKWqKRV/UPJKP8jVBDe2rEVn9+luSU=
+github.com/red-gold/telar-web v0.2.12 h1:/ib3jfFjdDttwjv+6W7XBNFsOK9NBikNTLG7IOh0ReQ=
+github.com/red-gold/telar-web v0.2.12/go.mod h1:nP7ZC0BMhtSfRqKWqKRV/UPJKP8jVBDe2rEVn9+luSU=
 github.com/red-gold/telar-web/micros/actions v0.0.0-20220517073502-5a610096e212 h1:SD1vyPYxfIx5RAGuOU3+y/rT6ajb8189md/icPAUW+w=
 github.com/red-gold/telar-web/micros/actions v0.0.0-20220517073502-5a610096e212/go.mod h1:MZ58iUFRSme7drThpYlzIy6UIe9JQsYA3FlZjnXKqWE=
 github.com/red-gold/telar-web/micros/actions v0.0.0-20220825092108-043295a29855 h1:kWYFLfDhzGJ1uY98qI9Ianl3Z8Vrco7EqL71hc4s/CQ=
@@ -716,6 +720,8 @@ github.com/red-gold/telar-web/micros/auth v0.0.0-20220828033515-6111487b2af9 h1:
 github.com/red-gold/telar-web/micros/auth v0.0.0-20220828033515-6111487b2af9/go.mod h1:RFZfiDUoz1q664YSTTLKjsIn6cd8GtD8HpglDJz7PIk=
 github.com/red-gold/telar-web/micros/auth v0.0.0-20220828072406-b754338a883c h1:5IqwziRRTyuYw8nYnv58Vwkt02k+I+8/7XGjK/3qUPk=
 github.com/red-gold/telar-web/micros/auth v0.0.0-20220828072406-b754338a883c/go.mod h1:eex8RpvhMmufvXdbOZ6YcQRZOFfLrpFDi9z42Y42XGo=
+github.com/red-gold/telar-web/micros/auth v0.0.0-20220829065729-b16c3db335c8 h1:6NqrFNC+6IpdAO5nvSgiOfE42Daj5V4Yy8eYEFDzJVE=
+github.com/red-gold/telar-web/micros/auth v0.0.0-20220829065729-b16c3db335c8/go.mod h1:kDEsN7qJaSxEbcQI1Z3M05fhQjVzyZa4O5bLuvA2bks=
 github.com/red-gold/telar-web/micros/notifications v0.0.0-20220517073502-5a610096e212 h1:yHpDp0R9IkOjAHv0xaEUtkV8m7rBHqC/o5jVHCfMuaI=
 github.com/red-gold/telar-web/micros/notifications v0.0.0-20220517073502-5a610096e212/go.mod h1:/vwPh0VJbWovou7xFiUA/DsvB9H8F+CYKLMnrOoQK10=
 github.com/red-gold/telar-web/micros/notifications v0.0.0-20220825092108-043295a29855 h1:beAiiF+Zf3udFrqPuevO1ecmK3YgPj+qztcAnSIt/aU=

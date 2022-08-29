@@ -42,7 +42,7 @@ var secrets struct {
 func init() {
 
 	// Init core config
-	config.InitCoreConfig(&coreSetting.AppConfig)
+	config.InitCoreConfig(&coreSetting.AppConfig, "storage")
 	coreSetting.AppConfig.PayloadSecret = &secrets.PayloadSecret
 	coreSetting.AppConfig.PublicKey = &secrets.KeyPub
 	coreSetting.AppConfig.PrivateKey = &secrets.Key

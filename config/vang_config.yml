@@ -1,3 +1,0 @@
-environment:
-  base_route: "/vang"
-  write_debug: "true"

@@ -1,3 +1,0 @@
-environment:
-  base_route: "/circles"
-  write_debug: "true"

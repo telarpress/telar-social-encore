@@ -7,6 +7,7 @@ require (
 	cloud.google.com/go/compute v1.9.0 // indirect
 	cloud.google.com/go/pubsub v1.25.1 // indirect
 	cloud.google.com/go/storage v1.25.0 // indirect
+	github.com/Jeffail/gabs/v2 v2.6.1
 	github.com/alexellis/hmac v1.3.0 // indirect
 	github.com/go-openapi/spec v0.20.7 // indirect
 	github.com/go-openapi/swag v0.22.3 // indirect
@@ -26,10 +27,10 @@ require (
 	github.com/montanaflynn/stats v0.6.6 // indirect
 	github.com/plivo/plivo-go v7.2.0+incompatible // indirect
 	github.com/red-gold/telar-core v0.1.19
-	github.com/red-gold/telar-web v0.2.9 // indirect
+	github.com/red-gold/telar-web v0.2.12 // indirect
 	github.com/red-gold/telar-web/micros/actions v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/telar-web/micros/admin v0.0.0-20220828072406-b754338a883c
-	github.com/red-gold/telar-web/micros/auth v0.0.0-20220828072406-b754338a883c
+	github.com/red-gold/telar-web/micros/auth v0.0.0-20220829065729-b16c3db335c8
 	github.com/red-gold/telar-web/micros/notifications v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/telar-web/micros/profile v0.0.0-20220828072406-b754338a883c
 	github.com/red-gold/telar-web/micros/setting v0.0.0-20220828072406-b754338a883c
