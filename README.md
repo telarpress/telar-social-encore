@@ -2,7 +2,7 @@
   <a href="https://telar.dec/" rel="noopener" target="_blank"><img width="150" src="https://raw.githubusercontent.com/red-gold/red-gold-web/master/website/static/img/logos/telar-social-logo/profile.png" alt="Material-UI logo"></a></p>
 </p>
 
-<h1 align="center">Telar Social Adapter for Encore</h1>
+<h1 align="center">Telar Social Adaptor for Encore</h1>
 
 <div align="center">
  Telar Social Engine is a scalable cloud native social network. Whatever your creative idea or unique bussiness model, you can build it by Telar running on any public or private cloud.
@@ -14,5 +14,6 @@
 
 ## Demo
 
-[Telar Social Galaxy](https://social.telar.dev)
-[Telar Social Solar](https://solar.telar.dev)
+- [Telar Social Galaxy](https://social.telar.dev)
+
+- [Telar Social Solar](https://solar.telar.dev)
