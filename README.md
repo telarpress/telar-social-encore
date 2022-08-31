@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://telar.dec/" rel="noopener" target="_blank"><img width="150" src="https://raw.githubusercontent.com/red-gold/red-gold-web/master/website/static/img/logos/telar-social-logo/profile.png" alt="Material-UI logo"></a></p>
+  <a href="https://telar.dec/" rel="noopener" target="_blank"><img width="150" src="https://raw.githubusercontent.com/red-gold/red-gold-web/master/website/static/img/logos/telar-social-logo/profile.png" alt="Telar Social logo"></a></p>
 </p>
 
 <h1 align="center">Telar Social Adapter for Encore</h1>
