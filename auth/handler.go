@@ -47,20 +47,26 @@ var secrets struct {
 func init() {
 
 	// Init core config
-	config.InitCoreConfig(&coreSetting.AppConfig, "auth")
-	coreSetting.AppConfig.PayloadSecret = &secrets.PayloadSecret
-	coreSetting.AppConfig.PublicKey = &secrets.KeyPub
-	coreSetting.AppConfig.PrivateKey = &secrets.Key
-	coreSetting.AppConfig.RefEmailPass = &secrets.RefEmailPass
-	coreSetting.AppConfig.RecaptchaKey = &secrets.RecaptchaKey
-	coreSetting.AppConfig.MongoDBHost = &secrets.MongoHost
-	coreSetting.AppConfig.Database = &secrets.MongoDatabase
-
+	var allSecrets = &config.AllSecrets{
+		AdminUsername:  secrets.AdminPassword,
+		AdminPassword:  secrets.AdminPassword,
+		MongoHost:      secrets.MongoHost,
+		MongoDatabase:  secrets.MongoDatabase,
+		PhoneAuthId:    secrets.PhoneAuthId,
+		PhoneAuthToken: secrets.PhoneAuthToken,
+		Key:            secrets.Key,
+		KeyPub:         secrets.KeyPub,
+		RefEmailPass:   secrets.RefEmailPass,
+		PayloadSecret:  secrets.PayloadSecret,
+		ServiceAccount: secrets.ServiceAccount,
+		TSClientSecret: secrets.TSClientSecret,
+		RecaptchaKey:   secrets.RecaptchaKey,
+	}
+	config.InitCoreConfig("auth", &coreSetting.AppConfig, allSecrets)
+	println(*coreSetting.AppConfig.MongoDBHost)
 	// Init auth micro config
-	config.InitAuthConfig(&authSetting.AuthConfig)
-	authSetting.AuthConfig.OAuthClientSecret = secrets.TSClientSecret
-	authSetting.AuthConfig.AdminUsername = secrets.AdminUsername
-	authSetting.AuthConfig.AdminPassword = secrets.AdminPassword
+	config.InitAuthConfig(&authSetting.AuthConfig, allSecrets)
+	println(authSetting.AuthConfig.AdminPassword)
 
 	// Initialize app
 	dirFS, err := fs.Sub(viewsFS, "views")

@@ -130,6 +130,7 @@
         "internal_gateway": "http://gateway.openfaas:8080/function",
         "origin": "https://social.faas.telar.dev, https://social.telar.dev, https://auth.telar.dev",
         "websocket_server_url": "https://telarpress-websocket.herokuapp.com",
-        "debug": true
+        "debug": true,
+        "secret_source": "encore"
     }
 }

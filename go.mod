@@ -9,6 +9,7 @@ require (
 	cloud.google.com/go/storage v1.25.0 // indirect
 	github.com/Jeffail/gabs/v2 v2.6.1
 	github.com/alexellis/hmac v1.3.0 // indirect
+	github.com/caarlos0/env/v6 v6.10.0 // indirect
 	github.com/go-openapi/spec v0.20.7 // indirect
 	github.com/go-openapi/swag v0.22.3 // indirect
 	github.com/go-stack/stack v1.8.1 // indirect
@@ -22,6 +23,7 @@ require (
 	github.com/google/martian/v3 v3.3.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.5.1 // indirect
+	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/klauspost/compress v1.15.9 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/montanaflynn/stats v0.6.6 // indirect

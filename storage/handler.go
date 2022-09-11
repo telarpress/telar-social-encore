@@ -42,18 +42,25 @@ var secrets struct {
 func init() {
 
 	// Init core config
-	config.InitCoreConfig(&coreSetting.AppConfig, "storage")
-	coreSetting.AppConfig.PayloadSecret = &secrets.PayloadSecret
-	coreSetting.AppConfig.PublicKey = &secrets.KeyPub
-	coreSetting.AppConfig.PrivateKey = &secrets.Key
-	coreSetting.AppConfig.RefEmailPass = &secrets.RefEmailPass
-	coreSetting.AppConfig.RecaptchaKey = &secrets.RecaptchaKey
-	coreSetting.AppConfig.MongoDBHost = &secrets.MongoHost
-	coreSetting.AppConfig.Database = &secrets.MongoDatabase
+	var allSecrets = &config.AllSecrets{
+		AdminUsername:  secrets.AdminPassword,
+		AdminPassword:  secrets.AdminPassword,
+		MongoHost:      secrets.MongoHost,
+		MongoDatabase:  secrets.MongoDatabase,
+		PhoneAuthId:    secrets.PhoneAuthId,
+		PhoneAuthToken: secrets.PhoneAuthToken,
+		Key:            secrets.Key,
+		KeyPub:         secrets.KeyPub,
+		RefEmailPass:   secrets.RefEmailPass,
+		PayloadSecret:  secrets.PayloadSecret,
+		ServiceAccount: secrets.ServiceAccount,
+		TSClientSecret: secrets.TSClientSecret,
+		RecaptchaKey:   secrets.RecaptchaKey,
+	}
+	config.InitCoreConfig("storage", &coreSetting.AppConfig, allSecrets)
 
 	// Init storage mirco
-	config.InitStorageConfig(&storageSetting.StorageConfig)
-	storageSetting.StorageConfig.StorageSecret = secrets.ServiceAccount
+	config.InitStorageConfig(&storageSetting.StorageConfig, allSecrets)
 
 	// Initialize app
 	app = fiber.New()
