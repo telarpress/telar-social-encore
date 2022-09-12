@@ -3,6 +3,7 @@ package config
 import (
 	"bytes"
 	_ "embed"
+	b64 "encoding/base64"
 	"os"
 
 	"github.com/Jeffail/gabs/v2"
@@ -170,13 +171,52 @@ func InitCoreConfig(microName string, cfg *coreSetting.Configuration, secrets *A
 	var secretSource = jsonParsed.Path("environment.secret_source").Data().(string)
 	if secretSource == "env" {
 		// Set secrets from env file
-		*cfg.PayloadSecret = envParsed["PayloadSecret"]
-		*cfg.PublicKey = envParsed["KeyPub"]
-		*cfg.PrivateKey = envParsed["Key"]
-		*cfg.RefEmailPass = envParsed["RefEmailPass"]
-		*cfg.RecaptchaKey = envParsed["RecaptchaKey"]
-		*cfg.MongoDBHost = envParsed["MongoHost"]
-		*cfg.Database = envParsed["MongoDatabase"]
+		payloadSecret, ok := envParsed["PayloadSecret"]
+		if ok {
+			cfg.PayloadSecret = &payloadSecret
+			log.Info("[%s] payloadSecret information loaded from env file", microName)
+		}
+
+		publicKey, ok := envParsed["KeyPub"]
+		if ok {
+			decodedInBytes, _ := b64.StdEncoding.DecodeString(publicKey)
+			decodedInString := string(decodedInBytes)
+			cfg.PublicKey = &decodedInString
+			log.Info("[%s] publicKey information loaded from env file", microName)
+		}
+
+		privateKey, ok := envParsed["Key"]
+		if ok {
+			decodedInBytes, _ := b64.StdEncoding.DecodeString(privateKey)
+			decodedInString := string(decodedInBytes)
+			cfg.PrivateKey = &decodedInString
+			log.Info("[%s] privateKey information loaded from env file", microName)
+		}
+
+		refEmailPass, ok := envParsed["RefEmailPass"]
+		if ok {
+			cfg.RefEmailPass = &refEmailPass
+			log.Info("[%s] refEmailPass information loaded from env file", microName)
+		}
+
+		recaptchaKey, ok := envParsed["RecaptchaKey"]
+		if ok {
+			cfg.RecaptchaKey = &recaptchaKey
+			log.Info("[%s] recaptchaKey information loaded from env file", microName)
+		}
+
+		mongoHost, ok := envParsed["MongoHost"]
+		if ok {
+			cfg.MongoDBHost = &mongoHost
+			log.Info("[%s] mongoHost information loaded from env file", microName)
+		}
+
+		mongoDatabase, ok := envParsed["MongoDatabase"]
+		if ok {
+			cfg.Database = &mongoDatabase
+			log.Info("[%s] mongoDatabase information loaded from env file", microName)
+		}
+
 	} else {
 		// Set secrets from encore
 		cfg.PayloadSecret = &secrets.PayloadSecret
@@ -326,7 +366,9 @@ func InitStorageConfig(cfg *storageSetting.Configuration, secrets *AllSecrets) {
 	var secretSource = jsonParsed.Path("environment.secret_source").Data().(string)
 	if secretSource == "env" {
 		// Set secrets from env file
-		cfg.StorageSecret = envParsed["ServiceAccount"]
+		decodedInBytes, _ := b64.StdEncoding.DecodeString(envParsed["ServiceAccount"])
+		decodedInString := string(decodedInBytes)
+		cfg.StorageSecret = decodedInString
 	} else {
 		cfg.StorageSecret = secrets.ServiceAccount
 	}
