@@ -4,6 +4,7 @@ import (
 	"bytes"
 	_ "embed"
 	b64 "encoding/base64"
+	"io/ioutil"
 	"os"
 
 	"github.com/Jeffail/gabs/v2"
@@ -24,9 +25,6 @@ var prodConfig []byte
 
 //go:embed config.test.json
 var testConfig []byte
-
-//go:embed .env
-var envFile []byte
 
 var internalBaseURL string
 
@@ -60,12 +58,16 @@ func init() {
 		jsonParsed, err = gabs.ParseJSON(testConfig)
 	} else {
 		jsonParsed, err = gabs.ParseJSON(devConfig)
-	}
-
-	var secretSource = jsonParsed.Path("environment.secret_source").Data().(string)
-	if secretSource == "env" {
-		reader := bytes.NewReader(envFile)
-		envParsed, err = godotenv.Parse(reader)
+		var envFile []byte
+		var secretSource = jsonParsed.Path("environment.secret_source").Data().(string)
+		if secretSource == "env" {
+			envFile, err = ioutil.ReadFile("config/.env")
+			reader := bytes.NewReader(envFile)
+			if err != nil {
+				panic(err)
+			}
+			envParsed, err = godotenv.Parse(reader)
+		}
 	}
 
 	if err != nil {
