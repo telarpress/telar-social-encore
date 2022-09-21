@@ -357,10 +357,15 @@ func InitStorageConfig(cfg *storageSetting.Configuration, secrets *AllSecrets) {
 		log.Info("[%s] base_route information loaded from config file |%s|", microName, baseRoute)
 	}
 
-	BucketName, ok := jsonParsed.Path("micros.storage.environment.bucket_name").Data().(string)
+	bucketName, ok := jsonParsed.Path("micros.storage.environment.bucket_name").Data().(string)
 	if ok {
-		cfg.BucketName = BucketName
-		log.Info("[%s] bucket_name information loaded from config file |%s|", microName, BucketName)
+		cfg.BucketName = bucketName
+		log.Info("[%s] bucket_name information loaded from config file |%s|", microName, bucketName)
+	}
+	proxyBalancer, ok := jsonParsed.Path("micros.storage.environment.proxy_balancer").Data().(string)
+	if ok {
+		cfg.ProxyBalancer = proxyBalancer
+		log.Info("[%s] proxy_balancer information loaded from config file |%s|", microName, proxyBalancer)
 	}
 
 	cfg.QueryPrettyURL = true

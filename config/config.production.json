@@ -87,7 +87,8 @@
                 "exec_timeout": "180",
                 "write_timeout": "180",
                 "read_timeout": "180",
-                "write_debug": "true"
+                "write_debug": "true",
+                "proxy_balancer": ""
             }
         },
         "user_rels": {
