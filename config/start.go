@@ -4,8 +4,8 @@ import (
 	"bytes"
 	_ "embed"
 	b64 "encoding/base64"
-	"io/ioutil"
 	"os"
+	"path"
 
 	"github.com/Jeffail/gabs/v2"
 	"github.com/joho/godotenv"
@@ -50,7 +50,7 @@ type AllSecrets struct {
 func init() {
 	internalBaseURL = baseURL()
 	env := getEnvironment()
-	log.Info("App is running on %s environment.", env)
+	log.Info("App is running on %s environment. The base URL is %s", env, internalBaseURL)
 	var err error
 	if env == "production" {
 		jsonParsed, err = gabs.ParseJSON(prodConfig)
@@ -61,7 +61,9 @@ func init() {
 		var envFile []byte
 		var secretSource = jsonParsed.Path("environment.secret_source").Data().(string)
 		if secretSource == "env" {
-			envFile, err = ioutil.ReadFile("config/.env")
+			// create cross platform env file path
+			envConfigPath := path.Join(os.Getenv("PWD"), "config", ".env")
+			envFile, err = os.ReadFile(envConfigPath)
 			reader := bytes.NewReader(envFile)
 			if err != nil {
 				panic(err)
