@@ -86,13 +86,31 @@ func init() {
 			Format: "[${time}] ${status} - ${latency} ${method} ${path} - ${header:}\n​",
 		},
 	))
-	// app.Use(cors.New(cors.Config{
-	// 	AllowOrigins:     *coreSetting.AppConfig.Origin,
-	// 	AllowCredentials: true,
-	// 	AllowHeaders:     "Origin, Content-Type, Accept, X-Requested-With, X-HTTP-Method-Override, access-control-allow-origin, access-control-allow-headers",
-	// }))
 
 	router.SetupRoutes(app)
+}
+
+// Mount the app to the parent app
+func Mount(route string, parentApp *fiber.App) {
+	app.Use(func(c *fiber.Ctx) error {
+		return ConnectDatabase(c.Context())
+	})
+	parentApp.Mount(route, app)
+
+}
+
+// Connect to database
+func ConnectDatabase(ctx context.Context) error {
+
+	// Connect
+	if database.Db == nil {
+		startErr := database.Connect(ctx)
+		if startErr != nil {
+			log.Error("Error connect to database: %s", startErr.Error())
+			return startErr
+		}
+	}
+	return nil
 }
 
 // Auth handler
@@ -105,13 +123,11 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 
 	// Connect
-	if database.Db == nil {
-		startErr := database.Connect(ctx)
-		if startErr != nil {
-			log.Error("Error startup: %s", startErr.Error())
-			w.WriteHeader(http.StatusInternalServerError)
-			w.Write([]byte(startErr.Error()))
-		}
+	startErr := ConnectDatabase(ctx)
+	if startErr != nil {
+		log.Error("Error startup: %s", startErr.Error())
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(startErr.Error()))
 	}
 
 	adaptor.FiberApp(app)(w, r)
