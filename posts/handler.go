@@ -79,10 +79,19 @@ func init() {
 
 // Mount the app to the parent app
 func Mount(route string, parentApp *fiber.App) {
-	app.Use(func(c *fiber.Ctx) error {
-		return ConnectDatabase(c.Context())
+
+	wrapperApp := fiber.New()
+	wrapperApp.Use(func(c *fiber.Ctx) error {
+		if err := ConnectDatabase(c.Context()); err != nil {
+			return err
+		}
+		return c.Next()
 	})
-	parentApp.Mount(route, app)
+	// mount the existing app to the wrapper app
+	wrapperApp.Mount("/", app)
+
+	// mount the wrapper app to the parent app instead of the original app
+	parentApp.Mount(route, wrapperApp)
 
 }
 
