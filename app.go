@@ -42,7 +42,7 @@ var (
 func main() {
 	// Parse command-line flags
 	flag.Parse()
-	dirFS, err := fs.Sub(viewsFS, "views")
+	dirFS, err := fs.Sub(viewsFS, "auth/views")
 	if err != nil {
 		log.Fatal(err.Error())
 	}
@@ -102,7 +102,9 @@ func main() {
 	userRelsMicro.Mount("/user-rels", app)
 	votesMicro.Mount("/votes", app)
 	vangMicro.Mount("/vang", app)
-
+	app.Get("/health", func(c *fiber.Ctx) error {
+		return c.SendStatus(fiber.StatusOK)
+	})
 	// Listen on port 3000
 	log.Fatal(app.Listen(*port)) // go run app.go -port=:3000
 }
